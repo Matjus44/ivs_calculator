@@ -2,18 +2,17 @@ Prostredi
 ---------
 
 Ubuntu 64bit
-Windows 64bit
 
 Autori
 ------
 
-Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+Nazev tymu: Husičjeking
+
+- xjanek05 Matúš Janek 
+- xgorcj00 Ján Gorc 
+- xhuska03 Richard Húska 
 
 Licence
 -------
-
+MIT
 Tento program je poskytovan...

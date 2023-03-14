@@ -14,5 +14,4 @@ Nazev tymu: Husičjeking
 
 Licence
 -------
-MIT
-Tento program je poskytovan...
+[MIT](./LICENCE)

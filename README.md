@@ -6,7 +6,7 @@ Ubuntu 64bit
 Autori
 ------
 
-Nazev tymu: Husičjeking
+Nazev tymu: husicjeking
 
 - xjanek05 Matúš Janek 
 - xgorcj00 Ján Gorc 

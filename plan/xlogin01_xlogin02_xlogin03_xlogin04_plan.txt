@@ -1,8 +1,28 @@
-Tento soubor bude obsahovat:
+Due dates:
+	Basic math. ops. due 25.3.
+	Advanced math. ops. due 5.4 
+	GUI due 8.4.
+	Profiling due 8.4.
+	Tests due 10.4.
+	from 10.4. testing + debugging
+	Documentation due 20.4
 
--- stanovené termíny,
--- přidělení úkolů na projektu jednotlivým řešitelům,
--- zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci (jsou-li nějaká),
--- zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící (viz níže).
+Task distribution:
+	Basic math. ops. (xjanek05)
+	Advanced math. ops (xhuska03)
+	GUI (xgorcj00)
+	Profiling (xhuska03)
+	Testing(xjanek05)
+	Documentation (xgorcj00)
+	Instal.(xhuska03)
+	
 
-Alternativně lze odevzdat archiv xlogin01_xlogin02_xlogin03_xlogin04_plan.zip, který bude obsahovat libovolný počet souborů xlogin01_xlogin02_xlogin03_xlogin04_plan* ("*" zastupuje libovolný počet libovolných znaků, tedy např. ".mpp" či "01.jpg"), přičemž plán zde může být vytvořený v MS Projectu či jiném programu (není-li daný program ve škole dostupný, je nutno odevzdat i exportovanou verzi v PDF či jpg).
+Communication channels:
+	-Discord (video calls)
+	-Instagram (chat messages)
+
+Hub:
+	Github: 
+		HTTPS: https://github.com/Matjus44/ivs_calculator
+	 	SSH:   git@github.com:Matjus44/ivs_calculator.git
+	Uživateľ ivskontorla je pozvaný do repozitára a môže manipulovať s projektom

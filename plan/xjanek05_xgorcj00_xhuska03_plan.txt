@@ -26,6 +26,3 @@ Hub:
 		HTTPS: https://github.com/Matjus44/ivs_calculator
 	 	SSH:   git@github.com:Matjus44/ivs_calculator.git
 	Uživateľ ivskontorla je pozvaný do repozitára a môže manipulovať s projektom
-	
-
-

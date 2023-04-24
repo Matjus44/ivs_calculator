@@ -139,5 +139,27 @@ button_divide.grid(row=6, column=2)
 button_power.grid(row=7, column=0)
 button_root.grid(row=7, column=1)
 button_dot.grid(row=7, column=2)
+window.bind("1", lambda event: button_1.invoke())
+window.bind("2", lambda event: button_2.invoke())
+window.bind("3", lambda event: button_3.invoke())
+window.bind("4", lambda event: button_4.invoke())
+window.bind("5", lambda event: button_5.invoke())
+window.bind("6", lambda event: button_6.invoke())
+window.bind("7", lambda event: button_7.invoke())
+window.bind("8", lambda event: button_8.invoke())
+window.bind("9", lambda event: button_9.invoke())
+window.bind("0", lambda event: button_0.invoke())
+window.bind("+", lambda event: button_add.invoke())
+window.bind("-", lambda event: button_subtract.invoke())
+window.bind("/", lambda event: button_divide.invoke())
+window.bind("*", lambda event: button_multiply.invoke())
+window.bind(".", lambda event: button_dot.invoke())
+window.bind("^", lambda event: button_power.invoke())
+window.bind("<Return>", lambda event: button_equal.invoke())
+
+
+
+
+
 # Run the program
 window.mainloop()

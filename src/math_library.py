@@ -32,9 +32,9 @@ def factorial(num1):
         return 1
     if isinstance(num1,float):
         return error_factorial
-    result = 0
+    result = 1
     while num1 > 0 :
-        result = result + num1
+        result = result * num1
         num1 -= 1
     
     return result

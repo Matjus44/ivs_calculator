@@ -1,18 +1,13 @@
-.PHONY: all initialization pack clean test doc profile run install
-
-all: initialization run
-	chmod +x gui.py
-
-initialization:
-	sudo apt-get install python3-tk
-	sudo apt-get install python3-pytest
-	sudo apt-get install doxygen
-
-profile:
-	python3 profiling.py <../profiling/data.txt
+.PHONY: run clean all pack profile help test
 
 run:
-	python3 gui.py
+	python3 -m calc.py
 
-test: mathlib_test.py
-	pytest mathlib_test.py
+clean:
+	rm -rf *.pyc *.spec ../doc html/ latex/
+
+test:
+	python3 -m mathlib_test.py
+
+profile:
+	python3 -m profiling.py

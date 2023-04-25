@@ -82,4 +82,9 @@ def sqrt(num1,num2):
             root_result = -root_result
         return root_result
 
+def logarithm(base,x):
+    if x <= 0:
+        return float('nan')
+    return math.log(x) / math.log(base)
+
 

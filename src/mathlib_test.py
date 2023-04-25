@@ -2,7 +2,9 @@ import math_library as m
 
 # Testing math library. Implementation of functions which are used here, is in math_library.py.
 
-# Test of add function in math library.
+##
+# @brief Test of add function in math library.
+#
 def test_add():
     
     assert m.add(1,1) == 2
@@ -12,8 +14,9 @@ def test_add():
     assert m.add(10000000,1000000) == 11000000
     assert m.add(2.6,1.7) == 4.3
     assert m.add(50.5,50) == 100.5
-
-# Test of sub function which takes 2 numbers and subtract num2 from num1.
+##
+# @brief Test of sub function which takes 2 numbers and subtract num2 from num1.
+#
 def test_sub():
 
     # without decimal numbers
@@ -27,8 +30,9 @@ def test_sub():
     assert m.sub(5.54,-1.54) == 7.08
     assert m.sub(-2.6,5) == -7.6
     assert m.sub(-140.50,7.254) == -147.754
-
-# Test of function multiple which takes 2 numbers and multiplies them.
+##
+# @brief Test of function multiple which takes 2 numbers and multiplies them.
+#
 def test_multiple():
 
     # Without decimal numbers.
@@ -44,7 +48,9 @@ def test_multiple():
     assert m.multiple(-140.50,7.255) == -1019.3275
     assert m.multiple(-20.5,-20.5) == 420.25
 
-# Test of function divide which divides num1 with num2.
+##
+# @brief Test of function divide which divides num1 with num2.
+#
 def test_divide():
 
     # without decimal numbers
@@ -58,8 +64,9 @@ def test_divide():
     assert m.divide(5.55,-1.50) == -3.6999999999999997
     assert m.divide(-2.6,5) == -0.52
     assert m.divide(-140.50,7.255) == -19.365954514128187
-
-# Test of function factorial which returns factorial of num1.
+##
+# @brief Test of function factorial which returns factorial of num1.
+#
 def test_factorial():
     
      # without decimal numbers
@@ -71,8 +78,9 @@ def test_factorial():
     # with decimal numbers
     assert m.factorial(1.5) == m.error_factorial
     assert m.factorial(-1.5) == m.error_factorial
-
-# Test of function exponentiate which exponentiate num1 with num2.
+##
+# @brief Test of function exponentiate which exponentiate num1 with num2.
+#
 def test_exponentiate():
 
     # without decimal numbers
@@ -86,8 +94,9 @@ def test_exponentiate():
     assert m.exponentiate(-1.5,3) == -3.375
     assert m.exponentiate(4.0,5.3) == m.error_exponentiate
     assert m.exponentiate(2.25,2) == 5.0625
-
-# Test of square root which makes num2 square root of num1
+##
+# @brief Test of square root which makes num2 square root of num1.
+#
 def test_sqrt_root():
 
     # without decimal numbers
@@ -102,7 +111,9 @@ def test_sqrt_root():
     assert m.sqrt(2,3) == 1.2599210498948732
     assert m.sqrt(4.0,5.3) == m.error_sqrt
     assert m.sqrt(2.25,2) == 1.5
-
+##
+# @brief test of logarithm function
+#
 def test_log():
     #without decimal numbers
     assert m.logarithm(2,4) == 2

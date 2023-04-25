@@ -22,8 +22,11 @@ if amount_of_numbers == 0:
     print("inserted data file is empty")
     sys.exit()
 
-# We loop trough number in data and we check if each string represents a number.
+##
+# @Brief We loop trough number in data and we check if each string represents a number.
 # If there is some string which does not represent number, then we break the loop and in next function we kill the program.
+# @param amount_of_numbers
+#
 for i in range(amount_of_numbers):
     try:
         numbers_list[i] = float(numbers_list[i])

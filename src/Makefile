@@ -10,7 +10,7 @@ test:
 	python3 -m mathlib_test.py
 
 profile:
-	python3 -m profiling.py
+	python profiling.py
 
 doc:
 	rm -rf ../doc

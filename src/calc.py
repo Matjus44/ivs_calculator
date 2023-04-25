@@ -176,8 +176,9 @@ def button_equal():
                 break
 
 
-    
-    # perform multiplication and division operations next
+    ##
+    # @brief perform multiplication and division operations next
+    #
     while '*' in operators or '/' in operators:
         for i in range(len(operators)):
             if operators[i] == '*':

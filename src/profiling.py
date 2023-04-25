@@ -83,13 +83,3 @@ def standard_deviation(average_result,result,amount_of_numbers):
 
 sd_result = standard_deviation(average_result,result,amount_of_numbers)
 print("this is result of standart derivation:",sd_result)
-
-pr = cProfile.Profile()
-pr.enable()
-result = adding_numbers(amount_of_numbers,numbers_list)
-average_result = average(result,amount_of_numbers)
-standard_deviation_result = standard_deviation(average_result,result,amount_of_numbers)
-pr.disable()
-
-# print profiling stats
-pr.print_stats(sort='cumtime')

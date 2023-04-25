@@ -145,14 +145,14 @@ def button_equal():
     
     # iterate over the calculation list and push operators and operands onto the stacks
     for i in range(len(calculation)):
-        if calculation[i] in ['+', '-', '*', '/', '^', '√','!']:
+        if calculation[i] in ['+', '-', '*', '/', '^', '√','!', 'log']:
             
             operators.append(calculation[i])
         else:
             operands.append(float(calculation[i]))
     
     # perform exponentiation and square root operations first
-    while '^' in operators or '√' in operators or '!' in operators:
+    while '^' in operators or '√' in operators or '!' in operators or 'log' in operators:
         for i in range(len(operators)):
             if operators[i] == '^':
                 operands[i] = m.exponentiate(operands[i], int(operands[i+1]))
@@ -166,6 +166,11 @@ def button_equal():
                 break
             elif operators[i] == '!':
                 operands[i] = m.factorial(int(operands[i]))
+                del operators[i]
+                del operands[i+1]
+                break
+            elif operators[i] == 'log':
+                operands[i] = m.logarithm(operands[i], int(operands[i+1]))
                 del operators[i]
                 del operands[i+1]
                 break
@@ -210,6 +215,12 @@ def button_dot():
     if '.' not in current:
         display["text"] = str(current) + "."
         total_expression["text"] += "."
+def button_log():
+    number = display["text"]
+    calculation.append(int(number))
+    calculation.append('log')
+    total_expression["text"] += "log"
+    display["text"] = ""
 
 # Create the buttons
 button_1 = tk.Button(window, text="1",width=6, height=3, font=("Helvetica", 16), bg="#e6e6e6", activebackground="#cccccc", command=lambda: button_click(1),padx=0, pady=0)
@@ -232,6 +243,7 @@ button_power = tk.Button(window, text="x^y", width=6, height=3,font=("Helvetica"
 button_root = tk.Button(window, text="y√x", width=6, height=3, font=("Helvetica", 16), bg="#ff9933", activebackground="#ffcc66", command=button_root,padx=0, pady=0)
 button_dot = tk.Button(window, text=".", width=6, height=3, font=("Helvetica", 16),  bg="#ff9933", activebackground="#ffcc66",command=button_dot,padx=0, pady=0)
 button_factorial = tk.Button(window, text="x!", width=6, height=3, font=("Helvetica", 16),  bg="#ff9933", activebackground="#ffcc66", command=button_factorial,padx=0, pady=0)
+button_log = tk.Button(window, text="x log y", width=6, height=3, font=("Helvetica", 16),  bg="#ff9933", activebackground="#ffcc66", command=button_log,padx=0, pady=0)
 
 # Put the buttons on the screen
 button_1.grid(row=4, column=0,sticky=tk.NSEW)
@@ -260,6 +272,7 @@ button_power.grid(row=8, column=0,sticky=tk.NSEW)
 button_root.grid(row=8, column=1,sticky=tk.NSEW)
 button_dot.grid(row=8, column=2,sticky=tk.NSEW)
 button_factorial.grid(row=6, column=1,sticky=tk.NSEW)
+button_log.grid(row=6, column=2,sticky=tk.NSEW)
 window.bind("1", lambda event: button_1.invoke())
 window.bind("2", lambda event: button_2.invoke())
 window.bind("3", lambda event: button_3.invoke())

@@ -90,5 +90,3 @@ def logarithm(base,x):
         return error_log
     else:
         return math.log(x) / math.log(base)
-
-

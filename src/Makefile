@@ -1,4 +1,3 @@
-
 .PHONY: run clean all pack profile help test
 
 run:
@@ -12,5 +11,3 @@ test:
 
 profile:
 	python3 -m profiling.py
-
-

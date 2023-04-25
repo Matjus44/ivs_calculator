@@ -1,14 +1,19 @@
 import math_library
 import sys
+import cProfile
 
 # Set condition to false which will be usefull later.
 error_invalid_data = False
-
 # Reading lines from data file.
-user_input = sys.stdin.readlines()
+lines = sys.stdin.readlines()
 
 # Spaces and tabulators will be ingored, numbers will be stored in list.
-numbers_list = user_input[0].split() 
+lines = [line.strip() for line in lines]
+
+# Split each line into a list of numbers.
+numbers_list = []
+for line in lines:
+    numbers_list.extend(line.split())
 
 # Gets count of numbers in list
 amount_of_numbers = len(numbers_list)    
@@ -77,4 +82,14 @@ def standard_deviation(average_result,result,amount_of_numbers):
     return sqrt_abc
 
 sd_result = standard_deviation(average_result,result,amount_of_numbers)
-print(sd_result)
+print("this is result of standart derivation:",sd_result)
+
+pr = cProfile.Profile()
+pr.enable()
+result = adding_numbers(amount_of_numbers,numbers_list)
+average_result = average(result,amount_of_numbers)
+standard_deviation_result = standard_deviation(average_result,result,amount_of_numbers)
+pr.disable()
+
+# print profiling stats
+pr.print_stats(sort='cumtime')

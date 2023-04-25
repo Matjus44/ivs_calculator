@@ -11,3 +11,8 @@ test:
 
 profile:
 	python3 -m profiling.py
+
+doc:
+	rm -rf ../doc
+	mkdir ../doc
+	cd ../doc && doxygen ../src/Doxyfile

@@ -1,5 +1,5 @@
 ##
-# @file gui.py
+# @file calc.py
 # @brief graphical user interface
 #
 # @author Matúš Janek (xjanek05)

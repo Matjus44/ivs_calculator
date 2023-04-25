@@ -9,7 +9,10 @@ if [ -f "/usr/share/ivs-calc/ivs-icon.png" ]; then
         echo "If you want to install calculator you need to install tkinter first. Do you want to install it now?(y/n)"
         read get
         if echo "$get" | grep -iq "^y" ;then
-            sudo -H pip3 install tkinter 2>/dev/null
+            sudo apt-get update 2>/dev/null
+            sudo apt-get install python3-pip 2>/dev/null
+            sudo apt-get install python3-tk 2>/dev/null
+            sudo pip3 install pyinstaller 2>/dev/null
         else
             echo "Installation was not successful!"
             exit
@@ -20,7 +23,7 @@ if [ -f "/usr/share/ivs-calc/ivs-icon.png" ]; then
         echo "You are going to install ivs-projekt. Do you want to install it?(y/n)"
         read get
         if echo "$get" | grep -iq "^y" ;then
-            pyinstaller -F ../src/calc.py
+            pyinstaller -F ../repo/src/calc.py
         else
             echo "Installation failed"
             exit
@@ -34,7 +37,7 @@ if [ -f "/usr/share/ivs-calc/ivs-icon.png" ]; then
             echo "You are about to install ivs-calc, do you want to install it?(y/n)"
             read get
             if echo "$get" | grep -iq "^y" ;then
-                pyinstaller -F ../src/calc.py
+                pyinstaller -F ../repo/src/calc.py
             else
                 echo "Installation failed"
                 exit
@@ -48,7 +51,7 @@ if [ -f "/usr/share/ivs-calc/ivs-icon.png" ]; then
    
     sudo mv ./dist/calc /usr/share/applications
     sudo mkdir /usr/share/ivs-calc
-    sudo cp ../ivs-icon.png /usr/share/ivs-calc/
+    sudo cp ../repo/ivs-icon.png /usr/share/ivs-calc/
     chmod u+x "uninstall.sh"
     sudo mv ./uninstall.sh /usr/share/applications/
     cp /usr/share/applications/uninstall.sh ./
@@ -83,7 +86,7 @@ if [ ! -e "remove-calc.desktop" ]; then
 sudo rm ./calc.spec
         sudo rm -rf dist
         sudo rm -rf build
-        sudo rm -rf ../src/__pycache__
+        sudo rm -rf ../repo/src/__pycache__
 
     echo "Installation was successful"
 fi

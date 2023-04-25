@@ -4,7 +4,7 @@ run:
 	python3 -m calc.py
 
 clean:
-	rm -rf *.pyc *.spec ../doc html/ latex/
+	rm -rf *.pyc
 
 test:
 	python3 -m mathlib_test.py

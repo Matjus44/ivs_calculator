@@ -1,1 +1,4 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Na začiatku sme si rozbrali ulohy, vytvorili repozitar, a dohodli sme sa na termínoch. 
+Vzhladom na vela projektov v tomto semestri sme nestíhali deadliny, zároveň to bolo spôsobemé aj nedostatkom komunkácie od
+ex kolegu xgorcj00. Tento projekt bol velmi zaujímavý a sme radi že sme sa naučili nové veci v jazyku python a osvojili si
+prácu s gitom.

@@ -10,4 +10,13 @@ test:
 	python3 -m mathlib_test.py
 
 profile:
-	python3 -m profiling.py
+	python profiling.py
+
+data_profile:
+	@read filename; \
+	cat $$filename | python profiling.py
+
+doc:
+	rm -rf ../doc
+	mkdir ../doc
+	cd ../doc && doxygen ../src/Doxyfile

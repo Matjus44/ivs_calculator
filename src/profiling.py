@@ -3,11 +3,13 @@ import sys
 
 # Set condition to false which will be usefull later.
 error_invalid_data = False
-# Reading lines from data file.
-lines = sys.stdin.readlines()
 
-# Spaces and tabulators will be ingored, numbers will be stored in list.
-lines = [line.strip() for line in lines]
+# Reading lines from data file or standard input.
+if sys.stdin.isatty():  # No input file is provided, read from standard input.
+    data = input()
+    lines = [data]
+else:  # An input file is provided, read from the file.
+    lines = sys.stdin.readlines()
 
 # Split each line into a list of numbers.
 numbers_list = []
@@ -22,8 +24,11 @@ if amount_of_numbers == 0:
     print("inserted data file is empty")
     sys.exit()
 
-# We loop trough number in data and we check if each string represents a number.
+##
+# @Brief We loop trough number in data and we check if each string represents a number.
 # If there is some string which does not represent number, then we break the loop and in next function we kill the program.
+# @param amount_of_numbers
+#
 for i in range(amount_of_numbers):
     try:
         numbers_list[i] = float(numbers_list[i])
@@ -99,4 +104,4 @@ def standard_deviation(average_result,result,amount_of_numbers):
 # store result into variabile sd_result.
 sd_result = standard_deviation(average_result,result,amount_of_numbers)
 # print out result.
-print("this is result of standart derivation:",sd_result)
+print(sd_result)

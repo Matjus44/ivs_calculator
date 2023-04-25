@@ -17,5 +17,5 @@ if [ -f "/usr/share/ivs-calc/ivs-icon.png" ]; then
     fi
     
 else
-    echo "Program is already uninstalled. You can install it via installer."
+    echo "Program is already uninstalled"
 fi

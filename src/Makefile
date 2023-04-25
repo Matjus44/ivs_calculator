@@ -25,7 +25,7 @@ doc:
 	
 pack:clean doc
 	mkdir -p ../../$(TEAM_NAME)/doc && cp -a ../doc/. ../../$(TEAM_NAME)/doc
-	mkdir -p ../../$(TEAM_NAME)/install && cp -a ../install/. ../../$(TEAM_NAME)/install
+	mkdir -p ../../$(TEAM_NAME)/install && cp -a ../../install/install/. ../../$(TEAM_NAME)/install
 	mkdir -p ../../$(TEAM_NAME)/repo &&  cp -a ../. ../../$(TEAM_NAME)/repo
 	rm -rf ../../$(TEAM_NAME)/repo/doc ../../$(TEAM_NAME)/repo/venv
 	rm -rf ../../$(TEAM_NAME)/repo/Pipfile ../../$(TEAM_NAME)/repo/Pipfile.lock

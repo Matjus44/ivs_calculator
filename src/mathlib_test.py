@@ -66,7 +66,7 @@ def test_factorial():
     assert m.factorial(1) == 1
     assert m.factorial(-5) == m.error_factorial
     assert m.factorial(0) == 1
-    assert m.factorial(10) == 55
+    assert m.factorial(10) == 3628800
 
     # with decimal numbers
     assert m.factorial(1.5) == m.error_factorial
@@ -103,3 +103,14 @@ def test_sqrt_root():
     assert m.sqrt(4.0,5.3) == m.error_sqrt
     assert m.sqrt(2.25,2) == 1.5
 
+def test_log():
+    #without decimal numbers
+    assert m.logarithm(2,4) == 2
+    assert m.logarithm(2,-4) == m.error_log
+    assert m.logarithm(-2,4) == m.error_log
+
+    #with decimal numbers
+    assert m.logarithm(2,3.5) == 1.8073549220576042
+    assert m.logarithm(2,-3.5) == m.error_log
+    assert m.logarithm(1.5,2) == 1.7095112913514547
+    

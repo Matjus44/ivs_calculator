@@ -4,6 +4,7 @@ error_divide = "Dividing with 0 is illegal math operation !"
 error_exponentiate = "The number in exponent has to be natural number"
 error_sqrt = "U can not put even number in root when you want to make square root out of negative number"
 error_factorial = "Factorial can be created only from real positive numbers including 0"
+error_log = "Logarithm can be made only from x > 0"
 
 ##
 # @biref This function takes 2 numbers and adds them together.
@@ -81,5 +82,13 @@ def sqrt(num1,num2):
         if num1 < 0:
             root_result = -root_result
         return root_result
+
+def logarithm(base,x):
+    if x <= 0:
+        return error_log
+    elif base <= 0:
+        return error_log
+    else:
+        return math.log(x) / math.log(base)
 
 

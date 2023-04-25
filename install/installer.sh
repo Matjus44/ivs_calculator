@@ -9,7 +9,10 @@ if [ -f "/usr/share/ivs-calc/ivs-icon.png" ]; then
         echo "If you want to install calculator you need to install tkinter first. Do you want to install it now?(y/n)"
         read get
         if echo "$get" | grep -iq "^y" ;then
-            sudo -H pip3 install tkinter 2>/dev/null
+            sudo apt-get update 2>/dev/null
+            sudo apt-get install python3-pip 2>/dev/null
+            sudo apt-get install python3-tk 2>/dev/null
+            sudo pip3 install pyinstaller 2>/dev/null
         else
             echo "Installation was not successful!"
             exit

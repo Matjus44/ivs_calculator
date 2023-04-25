@@ -6,7 +6,6 @@ error_invalid_data = False
 
 # Reading lines from data file or standard input.
 if sys.stdin.isatty():  # No input file is provided, read from standard input.
-    print("Please enter the numbers separated by space and press Enter:")
     data = input()
     lines = [data]
 else:  # An input file is provided, read from the file.

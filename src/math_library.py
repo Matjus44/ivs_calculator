@@ -70,6 +70,7 @@ def exponentiate(num1,num2):
 # @param num1
 # @param num2
 # Also square root of number 0 is 0.
+#
 def sqrt(num1,num2):
     if ((num1 < 0) and (num2 % 2 == 0 )):
         return error_sqrt
@@ -83,6 +84,11 @@ def sqrt(num1,num2):
             root_result = -root_result
         return root_result
 
+##
+# @brief create logarithm of x with base
+# @param base
+# @param x
+#
 def logarithm(base,x):
     if x <= 0:
         return error_log

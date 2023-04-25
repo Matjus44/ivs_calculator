@@ -12,6 +12,10 @@ test:
 profile:
 	python profiling.py
 
+data_profile:
+	@read filename; \
+	cat $$filename | python profiling.py
+
 doc:
 	rm -rf ../doc
 	mkdir ../doc

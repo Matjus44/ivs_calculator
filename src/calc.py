@@ -215,13 +215,27 @@ def button_dot():
     if '.' not in current:
         display["text"] = str(current) + "."
         total_expression["text"] += "."
+##
+# @brief Appends the number on the display to the calculation list, followed by the log operator. Updates the total expression label with the factorial symbol, sets the display to '0'.
+#
+#
 def button_log():
     number = display["text"]
     calculation.append(int(number))
     calculation.append('log')
     total_expression["text"] += "log"
     display["text"] = ""
+##
+# @brief After clicking at help button shows window with help and instructions
+#
+def show_help():
+    help_window = tk.Toplevel()
+    help_window.title("Help")
+    help_window.geometry("400x400")
+    help_window.resizable(False, False)
+    help_text = tk.Label(help_window, text="Usage of calculator.\nCalculator is capable of performing basic math operations.Top label signals tottal expression you have entered and bottom just the answer, top label resets after you press equal button.\nYou can control the numbers and operations with the mouse or the keyboard.\n Calculator supports math logic such (multiply etc.) are performed as first.\n Usage of root: 1. number of which you want to take root,press root, 2. number is index of the root(2 number is natural number!)\n Usage of logarithm: 1. number is the base of the logarithm,press log, 2. number is of which you want to take the logarithm(base is natural number!)\n Usage of factorial: 1. number of which you want to take factorial, then press factorial.(Number must be whole real number!), if any ERROR message appears, just press CE(CLEAR) and continue with correct operations.", wraplength=300, justify="left")
 
+    help_text.pack()
 # Create the buttons
 button_1 = tk.Button(window, text="1",width=6, height=3, font=("Helvetica", 16), bg="#e6e6e6", activebackground="#cccccc", command=lambda: button_click(1),padx=0, pady=0)
 button_2 = tk.Button(window, text="2", width=6, height=3, font=("Helvetica", 16), bg="#e6e6e6", activebackground="#cccccc", command=lambda: button_click(2),padx=0, pady=0)
@@ -244,7 +258,7 @@ button_root = tk.Button(window, text="y√x", width=6, height=3, font=("Helvetic
 button_dot = tk.Button(window, text=".", width=6, height=3, font=("Helvetica", 16),  bg="#ff9933", activebackground="#ffcc66",command=button_dot,padx=0, pady=0)
 button_factorial = tk.Button(window, text="x!", width=6, height=3, font=("Helvetica", 16),  bg="#ff9933", activebackground="#ffcc66", command=button_factorial,padx=0, pady=0)
 button_log = tk.Button(window, text="x log y", width=6, height=3, font=("Helvetica", 16),  bg="#ff9933", activebackground="#ffcc66", command=button_log,padx=0, pady=0)
-
+button_help = tk.Button(window, text="?",bg="#FFFFFF", fg="#333333", bd=0, highlightthickness=0, padx=0, pady=0, command=show_help)
 # Put the buttons on the screen
 button_1.grid(row=4, column=0,sticky=tk.NSEW)
 button_2.grid(row=4, column=1,sticky=tk.NSEW)
@@ -259,7 +273,7 @@ button_8.grid(row=2, column=1,sticky=tk.NSEW)
 button_9.grid(row=2, column=2,sticky=tk.NSEW)
 
 button_0.grid(row=5, column=0,sticky=tk.NSEW)
-
+button_help.place(x=0, y=0)
 button_clear.grid(row=5, column=1,sticky=tk.NSEW)
 button_add.grid(row=6, column=0,sticky=tk.NSEW)
 button_equal.grid(row=5, column=2,sticky=tk.NSEW)

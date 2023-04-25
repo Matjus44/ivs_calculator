@@ -1,6 +1,5 @@
 import math_library
 import sys
-import cProfile
 
 # Set condition to false which will be usefull later.
 error_invalid_data = False
@@ -31,12 +30,18 @@ for i in range(amount_of_numbers):
     except ValueError:
         error_invalid_data = True
         break
-
+##
+# @brief If there was error above, then kill the program with error message.
+#
 if error_invalid_data == True:
     print("In data.txt file is some invalide character, u can use only numbers!")
     sys.exit()
-
-# adds nubmers from data together and return its value
+##
+# @brief adds nubmers from data together and return its value.
+# @param amount_of_numbers
+# @param number_list
+# @return final_result
+#
 def adding_numbers(amount_of_numbers,number_list):
     final_result = 0
     for i in range(amount_of_numbers):
@@ -46,14 +51,24 @@ def adding_numbers(amount_of_numbers,number_list):
 
 result = adding_numbers(amount_of_numbers,numbers_list)
 
-# Calculates average number which were read from data.
+##
+# @brief Calculates average number which were read from data.
+# @param result
+# @param amount_of_numbers
+# @return average
+#
 def average(result,amount_of_numbers):
     average = math_library.divide(result,amount_of_numbers)
     return average
 
 average_result = average(result,amount_of_numbers)
 
-# Calculates standard derivation
+## 
+# @brief Calculates standard derivation
+# @param average_result
+# @param result
+# @param amount_of_numbers
+#
 def standard_deviation(average_result,result,amount_of_numbers):
     # exp sum numbers (Xi**2)
     b = math_library.exponentiate(result,2)
@@ -81,5 +96,7 @@ def standard_deviation(average_result,result,amount_of_numbers):
     sqrt_abc = math_library.sqrt(abc_result,2)
     return sqrt_abc
 
+# store result into variabile sd_result.
 sd_result = standard_deviation(average_result,result,amount_of_numbers)
+# print out result.
 print("this is result of standart derivation:",sd_result)

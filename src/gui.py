@@ -1,5 +1,14 @@
 import tkinter as tk
 import math_library as m
+##
+# @file gui.py
+# @brief graphical user interface
+#
+# @author Matúš Janek (xjanek05)
+# @author Richard Húska (xhuska03)
+#
+#
+
 bg_color = "#f5f5f5"
 button_bg_color = "#e1e1e1"
 button_fg_color = "#333"
@@ -24,19 +33,29 @@ total_expression.grid(row=0, column=0, columnspan=4)
 calculation = []
 total_calculation = []
 
-# Define button click function
+## Append the given number to the display and the total expression
+# @brief Adds the given number to the current display and the total expression
+# @param number The number to be added to the display
+#
 def button_click(number):
     current = display["text"]
     display["text"] = str(current) + str(number)
 
         
     total_expression["text"] = total_expression["text"] + str(number)
+    
+## 
+# @brief Clears the current calculation and the display
+#
 def button_clear():
     global calculation
     calculation.clear()
     display["text"] = ""
     total_expression["text"] = ""
 
+##
+# @brief Adds the current number to the calculation list and "+" to the total expression
+#
 def button_add():
     number = display["text"]
     calculation.append(float(number))
@@ -44,28 +63,38 @@ def button_add():
     total_expression["text"] += "+"
    
     display["text"] = ""
-
+##
+# @brief Adds the current number to the calculation list and "-" to the total expression
+#
 def button_subtract():
     number = display["text"]
     calculation.append(float(number))
     calculation.append('-')
     total_expression["text"] += "-"
     display["text"] = ""
-
+##
+# @brief Adds the current number to the calculation list and "*" to the total expression
+#
 def button_multiply():
     number = display["text"]
     calculation.append(float(number))
     calculation.append('*')
     total_expression["text"] += "*"
     display["text"] = ""
-
+##
+# @brief Appends the number on the display to the calculation list, followed by the division operator. 
+#           Updates the total expression label with the division symbol, clears the display.
+#
 def button_divide():
     number = display["text"]
     calculation.append(float(number))
     calculation.append('/')
     total_expression["text"] += "/"
     display["text"] = ""
-
+##
+# @brief Appends the number on the display to the calculation list, followed by the power operator. 
+#           Updates the total expression label with the power symbol, clears the display.
+#
 def button_power():
     number = display["text"]
     calculation.append(float(number))
@@ -73,13 +102,20 @@ def button_power():
     total_expression["text"] += "^"
     display["text"] = ""
 
+##    
+# @brief Appends the number on the display to the calculation list, followed by the square root operator. 
+#           Updates the total expression label with the square root symbol, clears the display.
+#
 def button_root():
     number = display["text"]
     calculation.append(float(number))
     calculation.append('√')
     total_expression["text"] += "√"
     display["text"] = ""
-
+##
+# @brief Appends the number on the display to the calculation list, followed by the factorial operator. Updates the total expression label with the factorial symbol, sets the display to '0'.
+#
+#
 def button_factorial():
     number = display["text"]
    
@@ -87,7 +123,12 @@ def button_factorial():
     calculation.append('!')
     total_expression["text"] += "!"
     display["text"] = "0"
-    
+##
+# @brief Gets the number on the display and appends it to the calculation list.
+#           If the last operator in the calculation list is factorial, appends 0 to the calculation list.
+#           Evaluates the calculation by processing the operators and operands in the calculation list
+#           using the math_library module. Updates the display with the result and clears the calculation list.
+#
 
 def button_equal():
     global total_calculation
@@ -160,7 +201,13 @@ def button_equal():
     total_expression["text"] = str(result)
     total_calculation.extend(calculation)
     calculation.clear()
-
+##
+# @brief Adds a decimal point to the current number on the calculator display.
+# If the current number does not already contain a decimal point, this function
+# adds one to the end of the current number and updates the total expression to
+# reflect the change. If the current number already contains a decimal point,
+# this function does nothing.
+#
 def button_dot():
     current = display["text"]
     if '.' not in current:
